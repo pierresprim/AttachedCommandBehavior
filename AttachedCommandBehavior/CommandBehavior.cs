@@ -153,6 +153,11 @@ namespace AttachedCommandBehavior
         private static void OnEventChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             CommandBehaviorBinding binding = FetchOrCreateBinding(d);
+
+            if (e.NewValue == null)
+
+                return;
+
             //check if the Event is set. If yes we need to rebind the Command to the new event and unregister the old one
             if (binding.Event != null && binding.Owner != null)
                 binding.Dispose();

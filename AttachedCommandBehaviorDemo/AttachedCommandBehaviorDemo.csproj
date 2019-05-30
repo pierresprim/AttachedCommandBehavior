@@ -41,6 +41,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AttachedCommandBehavior, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AttachedCommandBehavior\bin\Debug\AttachedCommandBehavior.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -105,12 +109,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AttachedCommandBehavior\AttachedCommandBehavior.csproj">
-      <Project>{BA852758-6682-4878-906A-917A1E75DE16}</Project>
-      <Name>AttachedCommandBehavior</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="DemoView.xaml">

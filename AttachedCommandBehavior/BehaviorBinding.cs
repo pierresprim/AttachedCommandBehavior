@@ -194,12 +194,16 @@ namespace AttachedCommandBehavior
 
             if (Owner != null) //only do this when the Owner is set
 
+            {
+
                 //check if the Event is set. If yes we need to rebind the Command to the new event and unregister the old one
                 if (Behavior.Event != null && Behavior.Owner != null)
                     Behavior.Dispose();
 
-            //bind the new event to the command
-            Behavior.BindEvent(Owner, Event);
+                //bind the new event to the command
+                Behavior.BindEvent(Owner, Event);
+
+            }
 
         }
 

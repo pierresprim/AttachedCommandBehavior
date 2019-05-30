@@ -40,7 +40,7 @@ namespace AttachedCommandBehaviorDemo
         {
             DoSomething = x => Messages.Add("Action executed: " + x.ToString());
             Messages = new ObservableCollection<string>();
-            Events = new[] 
+            Events = new[]
             {
                 "PreviewMouseDown",
                 "PreviewMouseUp",
@@ -52,12 +52,12 @@ namespace AttachedCommandBehaviorDemo
                 "MouseLeave"
             };
 
-            SomeCommand = new SimpleCommand
+            SomeCommand = new DelegateCommand
             {
                 //this will set the Message property to the value of the CommandParameter
                 ExecuteDelegate = x => Messages.Add(x.ToString())
             };
-            ClearMessagesCommand = new SimpleCommand
+            ClearMessagesCommand = new DelegateCommand
             {
                 ExecuteDelegate = x => Messages.Clear(),
                 CanExecuteDelegate = x => Messages.Count > 0
