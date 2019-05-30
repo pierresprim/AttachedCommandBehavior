@@ -1,0 +1,74 @@
+﻿<Window x:Class="AttachedCommandBehaviorDemo.DemoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AttachedCommandBehavior;assembly=AttachedCommandBehavior"
+    xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib"
+    Title="Attached Command Behaviors aka ACB : : C# Disciple" Height="600" Width="600">
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="175"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Attached Command Behaviors aka ACB" FontWeight="Bold" FontSize="16"/>
+
+        <Border CornerRadius="5" Margin="10" BorderBrush="Silver" BorderThickness="1" Grid.Row="1" TextElement.FontSize="14">
+            <StackPanel>
+                <TextBlock Text="List of the last commands executed: " FontWeight="Bold"/>
+                <ListBox ItemsSource="{Binding Messages}" Height="110" />
+                <Button Content="Clear" Command="{Binding ClearMessagesCommand}"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="2" >
+
+            <WrapPanel Margin="0,10,0,20">
+                <TextBlock FontSize="14" Text="Border hooked to MouseDown event" Width="410"/>
+                <Border Background="Yellow" Width="350" Margin="0,0,10,0" Height="35" CornerRadius="2"
+                        local:CommandBehavior.Event="MouseDown" 
+                        local:CommandBehavior.Command="{Binding SomeCommand}"
+                        local:CommandBehavior.CommandParameter="MouseDown"
+                        >
+                    <TextBlock Text="MouseDown on this border to execute the command"/>
+                </Border>
+            </WrapPanel>
+
+            <WrapPanel Margin="0,0,0,20">
+                <TextBlock FontSize="14" Text="Border hooked to the event selected in the ComboBox" Width="410"/>
+                <Border Background="YellowGreen" Width="350" Margin="0,0,10,0" Height="35" CornerRadius="2"
+                        local:CommandBehavior.Event="{Binding ElementName=events1, Path=SelectedItem}" 
+                        local:CommandBehavior.Command="{Binding SomeCommand}"
+                        local:CommandBehavior.CommandParameter="{Binding ElementName=events1, Path=SelectedItem}"
+                        >
+                    <WrapPanel>
+                        <TextBlock Text="{Binding ElementName=events1, Path=SelectedItem}"/>
+                        <TextBlock Text=" on this border to execute the command"/>
+                    </WrapPanel>
+                </Border>
+                <ComboBox ItemsSource="{Binding Events}" MinWidth="200" SelectedIndex="1" x:Name="events1"/>
+            </WrapPanel>
+
+            <WrapPanel Margin="0,0,0,20">
+                <TextBlock FontSize="14" Text="Border hooked to an Action instead of a Command" Width="410" />
+                <Border Background="DarkSalmon" Width="350" Margin="0,0,10,0" Height="35" CornerRadius="2" 
+                        local:CommandBehavior.Event="MouseDown"  
+                        local:CommandBehavior.Action="{Binding DoSomething}"
+                        local:CommandBehavior.CommandParameter="from the DarkSalmon Border :P"/>
+            </WrapPanel>
+            
+            <WrapPanel Margin="0,10,0,20">
+               
+                <TextBlock FontSize="14" Text="Border hooked to MouseDown event" Width="410"/>
+                <Border Background="Yellow" Width="350" Margin="0,0,10,0" Height="35" CornerRadius="2" x:Name="test">
+                    <local:CommandBehaviorCollection.Behaviors>
+                            <local:BehaviorBinding Event="MouseLeftButtonDown" Action="{Binding DoSomething}" CommandParameter="An Action on MouseLeftButtonDown"/>
+                            <local:BehaviorBinding Event="MouseRightButtonDown" Command="{Binding SomeCommand}" CommandParameter="A Command on MouseRightButtonDown"/>
+                    </local:CommandBehaviorCollection.Behaviors>
+                    <TextBlock Text="MouseDown on this border to execute the command"/>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
