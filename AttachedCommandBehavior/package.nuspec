@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <!--*-->
+    <id>WinCopies.AttachedCommandBehavior</id>
+    <!--*-->
+    <version>3.0.0</version>
+    <title>AttachedCommandBehavior</title>
+    <!--*-->
+    <authors>Marlon Grech, Pierre Sprimont</authors>
+    <owners>Pierre Sprimont</owners>
+    <licenseUrl>https://github.com/pierresprim/AttachedCommandBehavior/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/pierresprim/AttachedCommandBehavior</projectUrl>
+    <!--
+    <iconUrl></iconUrl>
+-->
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <!--*-->
+    <description>Behaviors to link events to commands in WPF</description>
+    <!--*-->
+    <releaseNotes>System requirements:
+.NET Framework version: 4.8
+OS: Windows
+New in this version:
+Added some features and updated project to the new .NET and code specifications
+Project link: https://github.com/pierresprim/AttachedCommandBehavior
+License link: https://github.com/pierresprim/AttachedCommandBehavior/blob/master/LICENSE
+</releaseNotes>
+    <copyright>Copyright © Pierre Sprimont 2019</copyright>
+    <tags>
+    </tags>
+    <dependencies>
+      <!--
+      <dependency id="SampleDependency" version="1.0" />
+-->
+    </dependencies>
+  </metadata>
+</package>
