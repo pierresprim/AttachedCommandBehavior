@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AttachedCommandBehaviorDemo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Demo for the AttachedCommandBehavior package")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AttachedCommandBehaviorDemo")]
-[assembly: AssemblyCopyright("Copyright ©  2008")]
+[assembly: AssemblyProduct("AttachedCommandBehavior")]
+[assembly: AssemblyCopyright("Copyright © Pierre Sprimont 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
