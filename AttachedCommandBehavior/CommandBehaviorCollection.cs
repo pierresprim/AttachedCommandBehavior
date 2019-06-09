@@ -101,7 +101,7 @@ namespace AttachedCommandBehavior
                 //here we have to set the owner property to the new item and unregister the old item
                 case NotifyCollectionChangedAction.Replace:
 
-                    TryReplaceStyleBehaviors(GetStyleBehaviors(sourceCollection.Owner), e.OldItems, e.NewItems);
+                    TryReplaceStyleBehaviors(GetStyleBehaviors(sourceCollection.Owner), e.OldItems, e.NewItems, true);
 
                     break;
 
@@ -195,7 +195,7 @@ namespace AttachedCommandBehavior
 
         }
 
-        private static void TryReplaceStyleBehaviors(BehaviorBindingCollection behaviors, IList oldBehaviors, IList newBehaviors)
+        private static void TryReplaceStyleBehaviors(BehaviorBindingCollection behaviors, IList oldBehaviors, IList newBehaviors, bool disposeBehaviors)
 
         {
 
@@ -206,7 +206,8 @@ namespace AttachedCommandBehavior
                 Behavior clonedBehavior = newItem.Clone() as Behavior;
                 newItem.Owner = clonedBehavior.Owner = behaviors.Owner;
                 newItem.Id = oldItem.Id;
-                (oldItem as BehaviorBinding)?.Behavior.Dispose();
+                if (disposeBehaviors)
+                    (oldItem as BehaviorBinding)?.Behavior.Dispose();
                 for (int j = 0; j < behaviors.Count; j++)
                     if (behaviors[j].Id == oldItem.Id)
                         behaviors[j] = clonedBehavior;
@@ -239,7 +240,7 @@ namespace AttachedCommandBehavior
                 //here we have to set the owner property to the new item and unregister the old item
                 case NotifyCollectionChangedAction.Replace:
 
-                    TryReplaceStyleBehaviors(GetBehaviors(sourceCollection.Owner), e.OldItems, e.NewItems);
+                    TryReplaceStyleBehaviors(GetBehaviors(sourceCollection.Owner), e.OldItems, e.NewItems, false);
 
                     break;
 
