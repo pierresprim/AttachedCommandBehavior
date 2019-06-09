@@ -37,11 +37,11 @@ namespace AttachedCommandBehavior
         /// </summary>
         protected abstract void ResetBehavior();
 
-        ///// <summary>
-        ///// This is not actually used. This is just a trick so that this object gets WPF Inheritance Context
-        ///// </summary>
-        ///// <returns></returns>
-        //protected override Freezable CreateInstanceCore() => throw new NotImplementedException();
+        /// <summary>
+        /// This is not actually used. This is just a trick so that this object gets WPF Inheritance Context
+        /// </summary>
+        /// <returns></returns>
+        protected override Freezable CreateInstanceCore() => throw new NotImplementedException();
     }
 
     /// <summary>

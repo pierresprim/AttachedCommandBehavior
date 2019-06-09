@@ -1,6 +1,7 @@
 ﻿/* Source: https://dzone.com/articles/how-get-eventargs ; Author of original code: Marlon Grech */
 
 using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 
@@ -146,15 +147,19 @@ namespace AttachedCommandBehavior
         /// </summary>
         private static void OnEventChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            if (DesignerProperties.GetIsInDesignMode(d))
+
+                return;
+
             CommandBehaviorBinding binding = FetchOrCreateBinding(d);
 
             //check if the Event is set. If yes we need to rebind the Command to the new event and unregister the old one
             if (binding.Event != null && binding.Owner != null)
                 binding.Dispose();
 
-            if (string.IsNullOrEmpty((string)e.NewValue))
+            //if (string.IsNullOrEmpty((string)e.NewValue))
 
-                return;
+            //    return;
 
             //bind the new event to the command
             binding.BindEvent(d, e.NewValue.ToString());

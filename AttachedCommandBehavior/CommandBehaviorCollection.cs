@@ -57,7 +57,7 @@ namespace AttachedCommandBehavior
         {
             d.SetValue(BehaviorsPropertyKey, value);
 
-            ((INotifyCollectionChanged)value).CollectionChanged += new NotifyCollectionChangedEventHandler(CollectionChanged);
+            ((INotifyCollectionChanged)value).CollectionChanged += CollectionChanged;
         }
 
         static int GetId(BehaviorBindingCollection sourceCollection)

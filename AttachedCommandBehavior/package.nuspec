@@ -22,7 +22,7 @@
 .NET Framework version: 4.8
 OS: Windows
 New in this version:
-Added some features and updated project to the new .NET and code specifications
+Added a feature to handle behaviors in styles
 Project link: https://github.com/pierresprim/AttachedCommandBehavior
 License link: https://github.com/pierresprim/AttachedCommandBehavior/blob/master/LICENSE
 </releaseNotes>
