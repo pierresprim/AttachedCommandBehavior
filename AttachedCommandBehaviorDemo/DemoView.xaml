@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:AttachedCommandBehavior;assembly=AttachedCommandBehavior"
     xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib"
-    Title="Attached Command Behaviors aka ACB : : C# Disciple" Height="600" Width="600">
+    Title="Attached Command Behaviors aka ACB : : C# Disciple" Height="650" Width="600">
     <Grid Margin="10">
 
         <Grid.RowDefinitions>
@@ -57,15 +57,35 @@
                         local:CommandBehavior.Action="{Binding DoSomething}"
                         local:CommandBehavior.CommandParameter="from the DarkSalmon Border :P"/>
             </WrapPanel>
-            
+
             <WrapPanel Margin="0,10,0,20">
-               
+
                 <TextBlock FontSize="14" Text="Border hooked to MouseDown event" Width="410"/>
                 <Border Background="Yellow" Width="350" Margin="0,0,10,0" Height="35" CornerRadius="2" x:Name="test">
                     <local:CommandBehaviorCollection.Behaviors>
-                            <local:BehaviorBinding Event="MouseLeftButtonDown" Action="{Binding DoSomething}" CommandParameter="An Action on MouseLeftButtonDown"/>
-                            <local:BehaviorBinding Event="MouseRightButtonDown" Command="{Binding SomeCommand}" CommandParameter="A Command on MouseRightButtonDown"/>
+                        <local:BehaviorBinding Event="MouseLeftButtonDown" Action="{Binding DoSomething}" CommandParameter="An Action on MouseLeftButtonDown"/>
+                        <local:BehaviorBinding Event="MouseRightButtonDown" Command="{Binding SomeCommand}" CommandParameter="A Command on MouseRightButtonDown"/>
                     </local:CommandBehaviorCollection.Behaviors>
+                    <TextBlock Text="MouseDown on this border to execute the command"/>
+                </Border>
+            </WrapPanel>
+
+            <WrapPanel Margin="0,10,0,20">
+
+                <TextBlock FontSize="14" Text="Border hooked to MouseDown event" Width="410"/>
+                <Border Background="Yellow" Width="350" Margin="0,0,10,0" Height="35" CornerRadius="2">
+                    <Border.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="local:CommandBehaviorCollection.StyleBehaviors">
+                                <Setter.Value>
+                                    <local:BehaviorBindingCollection>
+                                        <local:BehaviorBinding Event="MouseLeftButtonDown" Action="{Binding DoSomething}" CommandParameter="An Action on MouseLeftButtonDown"/>
+                                        <local:BehaviorBinding Event="MouseRightButtonDown" Command="{Binding SomeCommand}" CommandParameter="A Command on MouseRightButtonDown"/>
+                                    </local:BehaviorBindingCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Border.Style>
                     <TextBlock Text="MouseDown on this border to execute the command"/>
                 </Border>
             </WrapPanel>

@@ -13,6 +13,8 @@ namespace AttachedCommandBehavior
     public abstract class Behavior : Freezable
     {
 
+        internal int Id { get; set; }
+
         DependencyObject owner;
 
         /// <summary>
@@ -35,11 +37,11 @@ namespace AttachedCommandBehavior
         /// </summary>
         protected abstract void ResetBehavior();
 
-        /// <summary>
-        /// This is not actually used. This is just a trick so that this object gets WPF Inheritance Context
-        /// </summary>
-        /// <returns></returns>
-        protected override Freezable CreateInstanceCore() => throw new NotImplementedException();
+        ///// <summary>
+        ///// This is not actually used. This is just a trick so that this object gets WPF Inheritance Context
+        ///// </summary>
+        ///// <returns></returns>
+        //protected override Freezable CreateInstanceCore() => throw new NotImplementedException();
     }
 
     /// <summary>
@@ -53,16 +55,7 @@ namespace AttachedCommandBehavior
         /// <summary>
         /// Stores the Command Behavior Binding
         /// </summary>
-        internal CommandBehaviorBinding Behavior
-        {
-            get
-            {
-                if (behavior == null)
-                    behavior = new CommandBehaviorBinding();
-
-                return behavior;
-            }
-        }
+        internal CommandBehaviorBinding Behavior => behavior ?? (behavior = new CommandBehaviorBinding());
 
         #region Command
 
@@ -70,7 +63,7 @@ namespace AttachedCommandBehavior
         /// Command Dependency Property
         /// </summary>
         public static readonly DependencyProperty CommandProperty =
-            DependencyProperty.Register( nameof( Command), typeof(ICommand), typeof(BehaviorBinding),
+            DependencyProperty.Register(nameof(Command), typeof(ICommand), typeof(BehaviorBinding),
                 new FrameworkPropertyMetadata(null,
                     new PropertyChangedCallback(OnCommandChanged)));
 
@@ -101,7 +94,7 @@ namespace AttachedCommandBehavior
         /// Action Dependency Property
         /// </summary>
         public static readonly DependencyProperty ActionProperty =
-            DependencyProperty.Register( nameof( Action), typeof(Action<object>), typeof(BehaviorBinding),
+            DependencyProperty.Register(nameof(Action), typeof(Action<object>), typeof(BehaviorBinding),
                 new FrameworkPropertyMetadata(null,
                     new PropertyChangedCallback(OnActionChanged)));
 
@@ -132,7 +125,7 @@ namespace AttachedCommandBehavior
         /// CommandParameter Dependency Property
         /// </summary>
         public static readonly DependencyProperty CommandParameterProperty =
-            DependencyProperty.Register( nameof( CommandParameter), typeof(object), typeof(BehaviorBinding),
+            DependencyProperty.Register(nameof(CommandParameter), typeof(object), typeof(BehaviorBinding),
                 new FrameworkPropertyMetadata(null,
                     new PropertyChangedCallback(OnCommandParameterChanged)));
 
@@ -207,7 +200,11 @@ namespace AttachedCommandBehavior
 
         }
 
+        protected override Freezable CreateInstanceCore() => new BehaviorBinding();
+
         #endregion
+
+
 
     }
 }

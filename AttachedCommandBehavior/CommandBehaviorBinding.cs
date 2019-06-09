@@ -1,6 +1,7 @@
 ﻿/* Source: https://dzone.com/articles/how-get-eventargs ; Author of original code: Marlon Grech */
 
 using System;
+using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
@@ -83,6 +84,7 @@ namespace AttachedCommandBehavior
         /// <param name="eventName">The event name</param>
         public void BindEvent(DependencyObject owner, string eventName)
         {
+
             EventName = eventName;
             Owner = owner;
             Event = Owner.GetType().GetEvent(EventName, BindingFlags.Public | BindingFlags.Instance);
@@ -102,6 +104,7 @@ namespace AttachedCommandBehavior
         public void Execute() => strategy.Execute(CommandParameter);
 
         #region IDisposable Members
+
         bool disposed = false;
 
         /// <summary>
