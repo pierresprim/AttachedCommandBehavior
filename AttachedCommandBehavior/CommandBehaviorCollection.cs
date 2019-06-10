@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
@@ -60,19 +59,7 @@ namespace AttachedCommandBehavior
             ((INotifyCollectionChanged)value).CollectionChanged += CollectionChanged;
         }
 
-        static int GetId(BehaviorBindingCollection sourceCollection)
-
-        {
-
-            if (sourceCollection.Count == 1) return sourceCollection.Count;
-
-            for (int i = 1; i < sourceCollection.Count; i++)
-
-                if (sourceCollection[i].Id - sourceCollection[i - 1].Id > 1) return sourceCollection[i].Id - 1;
-
-            return sourceCollection.Count + 1;
-
-        }
+        static int GetId(BehaviorBindingCollection sourceCollection) => sourceCollection.Count == 1 ? 1 : sourceCollection[sourceCollection.Count - 1].Id + 1;
 
         static void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -106,9 +93,41 @@ namespace AttachedCommandBehavior
                     break;
 
                 case NotifyCollectionChangedAction.Move:
+                    if (e.OldStartingIndex == e.NewStartingIndex) break;
                     int difference = e.OldStartingIndex - e.NewStartingIndex;
+                    int id;
+                    FreezableCollection<Behavior> styleBehaviors = GetStyleBehaviors(sourceCollection.Owner);
                     foreach (Behavior item in e.OldItems)
+                    {
+                        id = item.Id;
                         item.Id -= difference;
+                        foreach (Behavior styleItem in styleBehaviors)
+                            if (styleItem.Id == id)
+                                styleItem.Id = item.Id;
+                    }
+                    void updateId(int startIndex, int length)
+                    {
+                        int count = length + startIndex;
+                        for (int i = startIndex; i < count; i++)
+                        {
+                            id = sourceCollection[startIndex].Id;
+                            sourceCollection[startIndex].Id += startIndex + 1;
+                            foreach (Behavior styleItem in styleBehaviors)
+                                if (styleItem.Id == id)
+                                    styleItem.Id = sourceCollection[startIndex].Id;
+                        }
+                    }
+                    int _startIndex;
+                    if (e.NewStartingIndex < e.OldStartingIndex)
+                    {
+                        _startIndex = e.NewStartingIndex + e.OldItems.Count;
+                        updateId(_startIndex, e.OldStartingIndex + e.OldItems.Count - _startIndex + 1);
+                    }
+                    else
+                    {
+                        _startIndex = e.OldStartingIndex;
+                        updateId(_startIndex, e.NewStartingIndex - _startIndex + 1);
+                    }
                     break;
                 default:
                     break;

@@ -4,7 +4,7 @@
     <!--*-->
     <id>WinCopies.AttachedCommandBehavior</id>
     <!--*-->
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <title>AttachedCommandBehavior</title>
     <!--*-->
     <authors>Marlon Grech, Pierre Sprimont</authors>
@@ -22,7 +22,7 @@
 .NET Framework version: 4.8
 OS: Windows
 New in this version:
-Added a feature to handle behaviors in styles
+Added a feature to handle behaviors in styles and triggers
 Project link: https://github.com/pierresprim/AttachedCommandBehavior
 License link: https://github.com/pierresprim/AttachedCommandBehavior/blob/master/LICENSE
 </releaseNotes>
