@@ -164,7 +164,7 @@ namespace AttachedCommandBehavior
 
                     ((INotifyCollectionChanged)e.NewValue).CollectionChanged += StyleCollectionChanged;
 
-                    AddStyleBehavior(GetBehaviors(obj), e.NewValue as FreezableCollection<Behavior>);
+                    AddStyleBehaviors(GetBehaviors(obj), e.NewValue as FreezableCollection<Behavior>);
 
                 }
 
@@ -172,7 +172,7 @@ namespace AttachedCommandBehavior
 
         }
 
-        private static void AddStyleBehavior(BehaviorBindingCollection behaviors, IList behaviorsToAdd)
+        private static void AddStyleBehaviors(BehaviorBindingCollection behaviors, IList behaviorsToAdd)
 
         {
 
@@ -243,7 +243,7 @@ namespace AttachedCommandBehavior
                 case NotifyCollectionChangedAction.Add:
                     if (e.NewItems != null)
 
-                        AddStyleBehavior(GetBehaviors(sourceCollection.Owner), e.NewItems);
+                        AddStyleBehaviors(GetBehaviors(sourceCollection.Owner), e.NewItems);
 
                     break;
 
