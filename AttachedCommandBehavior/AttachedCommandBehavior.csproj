@@ -11,9 +11,11 @@
     <!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    
     <TargetFrameworks>net4;net472;net48;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <AssemblyName>AttachedCommandBehavior</AssemblyName>
+    <PackageId>WinCopies.AttachedCommandBehavior</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>3.1.0.1</Version>
