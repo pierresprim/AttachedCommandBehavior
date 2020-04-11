@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AttachedCommandBehavior</name>
+    </assembly>
+    <members>
+        <member name="T:AttachedCommandBehavior.Behavior">
+            <summary>
+            Provides a base class for behaviors.
+            This inherits from freezable so that it gets inheritance context for DataBinding to work
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.Behavior.Owner">
+            <summary>
+            Gets or sets the Owner of the binding
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.Behavior.ResetBehavior">
+            <summary>
+            When overriden in a derived class, resets the behavior.
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.Behavior.CreateInstanceCore">
+            <summary>
+            This is not actually used. This is just a trick so that this object gets WPF Inheritance Context
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AttachedCommandBehavior.BehaviorBinding">
+            <summary>
+            Defines a Command Binding
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.BehaviorBinding.Behavior">
+            <summary>
+            Stores the Command Behavior Binding
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.BehaviorBinding.CommandProperty">
+            <summary>
+            Command Dependency Property
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.BehaviorBinding.Command">
+            <summary>
+            Gets or sets the Command property.  
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.OnCommandChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Command property.
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.OnCommandChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Command property.
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.BehaviorBinding.ActionProperty">
+            <summary>
+            Action Dependency Property
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.BehaviorBinding.Action">
+            <summary>
+            Gets or sets the Action property. 
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.OnActionChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Action property.
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.OnActionChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Action property.
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.BehaviorBinding.CommandParameterProperty">
+            <summary>
+            CommandParameter Dependency Property
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.BehaviorBinding.CommandParameter">
+            <summary>
+            Gets or sets the CommandParameter property.  
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.OnCommandParameterChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the CommandParameter property.
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.OnCommandParameterChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the CommandParameter property.
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.BehaviorBinding.EventProperty">
+            <summary>
+            Event Dependency Property
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.BehaviorBinding.Event">
+            <summary>
+            Gets or sets the Event property.  
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.OnEventChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Event property.
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.OnEventChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Event property.
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.BehaviorBinding.ResetBehavior">
+            <summary>
+            Resets the behavior.
+            </summary>
+        </member>
+        <member name="T:AttachedCommandBehavior.CommandBehavior">
+            <summary>
+            Defines the attached properties to create a CommandBehaviorBinding
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.CommandBehavior.BehaviorProperty">
+            <summary>
+            Behavior Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.GetBehavior(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Behavior property. 
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.SetBehavior(System.Windows.DependencyObject,AttachedCommandBehavior.CommandBehaviorBinding)">
+            <summary>
+            Sets the Behavior property.  
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.CommandBehavior.CommandProperty">
+            <summary>
+            Command Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.GetCommand(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Command property.  
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.SetCommand(System.Windows.DependencyObject,System.Windows.Input.ICommand)">
+            <summary>
+            Sets the Command property. 
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.OnCommandChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Command property.
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.CommandBehavior.ActionProperty">
+            <summary>
+            Action Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.GetAction(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Action property.  
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.SetAction(System.Windows.DependencyObject,System.Action{System.Object})">
+            <summary>
+            Sets the Action property. 
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.OnActionChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Action property.
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.CommandBehavior.CommandParameterProperty">
+            <summary>
+            CommandParameter Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.GetCommandParameter(System.Windows.DependencyObject)">
+            <summary>
+            Gets the CommandParameter property.  
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.SetCommandParameter(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Sets the CommandParameter property. 
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.OnCommandParameterChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the CommandParameter property.
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.CommandBehavior.EventProperty">
+            <summary>
+            Event Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.GetEvent(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Event property.  This dependency property 
+            indicates ....
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.SetEvent(System.Windows.DependencyObject,System.String)">
+            <summary>
+            Sets the Event property.  This dependency property 
+            indicates ....
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehavior.OnEventChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Event property.
+            </summary>
+        </member>
+        <member name="T:AttachedCommandBehavior.CommandBehaviorBinding">
+            <summary>
+            Defines the command behavior binding
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.CommandBehaviorBinding.Owner">
+            <summary>
+            Get the owner of the CommandBinding ex: a Button
+            This property can only be set from the BindEvent Method
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.CommandBehaviorBinding.EventName">
+            <summary>
+            The event name to hook up to
+            This property can only be set from the BindEvent Method
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.CommandBehaviorBinding.Event">
+            <summary>
+            The event info of the event
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.CommandBehaviorBinding.EventHandler">
+            <summary>
+            Gets the EventHandler for the binding with the event
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.CommandBehaviorBinding.CommandParameter">
+            <summary>
+            Gets or sets a CommandParameter
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.CommandBehaviorBinding.Command">
+            <summary>
+            The command to execute when the specified event is raised
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.CommandBehaviorBinding.Action">
+            <summary>
+            Gets or sets the Action
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehaviorBinding.BindEvent(System.Windows.DependencyObject,System.String)">
+            <summary>
+            Creates an <see cref="T:System.EventHandler"/> on runtime and registers that handler to the Event specified
+            </summary>
+            <param name="owner">The <see cref="T:System.Windows.DependencyObject"/> owner</param>
+            <param name="eventName">The event name</param>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehaviorBinding.Execute">
+            <summary>
+            Executes the strategy
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehaviorBinding.Dispose">
+            <summary>
+            Unregisters the <see cref="P:AttachedCommandBehavior.CommandBehaviorBinding.EventHandler"/> from the <see cref="P:AttachedCommandBehavior.CommandBehaviorBinding.Event"/>
+            </summary>
+        </member>
+        <member name="F:AttachedCommandBehavior.CommandBehaviorCollection.BehaviorsPropertyKey">
+            <summary>
+            Behaviors Read-Only Dependency Property
+            As you can see the Attached readonly property has a name registered different (BehaviorsInternal) than the property name, this is a tricks os that we can construct the collection as we want
+            Read more about this here http://wekempf.spaces.live.com/blog/cns!D18C3EC06EA971CF!468.entry
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehaviorCollection.GetBehaviors(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Behaviors property.  
+            Here we initialze the collection and set the Owner property
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandBehaviorCollection.SetBehaviors(System.Windows.DependencyObject,AttachedCommandBehavior.BehaviorBindingCollection)">
+            <summary>
+            Provides a secure method for setting the Behaviors property.  
+            This dependency property indicates ....
+            </summary>
+        </member>
+        <member name="T:AttachedCommandBehavior.BehaviorBindingCollection">
+            <summary>
+            Collection to store the list of behaviors. This is done so that you can intiniate it from XAML
+            This inherits from freezable so that it gets inheritance context for DataBinding to work
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.BehaviorBindingCollection.Owner">
+            <summary>
+            Gets or sets the Owner of the binding
+            </summary>
+        </member>
+        <member name="T:AttachedCommandBehavior.DelegateCommand">
+            <summary>
+            Provides a base class for WPF commands.
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.DelegateCommand.CanExecuteDelegate">
+            <summary>
+            Gets or sets the Predicate to execute when the CanExecute of the command gets called
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.DelegateCommand.ExecuteDelegate">
+            <summary>
+            Gets or sets the action to be called when the Execute method of the command gets called
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.DelegateCommand.CanExecute(System.Object)">
+            <summary>
+            Checks if the command Execute method can run
+            </summary>
+            <param name="parameter">THe command parameter to be passed</param>
+            <returns>Returns true if the command can execute. By default true is returned so that if the user of SimpleCommand does not specify a CanExecuteCommand delegate the command still executes.</returns>
+        </member>
+        <member name="M:AttachedCommandBehavior.DelegateCommand.Execute(System.Object)">
+            <summary>
+            Executes the actual command
+            </summary>
+            <param name="parameter">THe command parameter to be passed</param>
+        </member>
+        <member name="T:AttachedCommandBehavior.DelegateCommand`1">
+            <summary>
+            Provides a base class for WPF commands.
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.DelegateCommand`1.CanExecuteDelegate">
+            <summary>
+            Gets or sets the Predicate to execute when the CanExecute of the command gets called
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.DelegateCommand`1.ExecuteDelegate">
+            <summary>
+            Gets or sets the action to be called when the Execute method of the command gets called
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.DelegateCommand`1.CanExecute(`0)">
+            <summary>
+            Checks if the command Execute method can run
+            </summary>
+            <param name="parameter">THe command parameter to be passed</param>
+            <returns>Returns true if the command can execute. By default true is returned so that if the user of SimpleCommand does not specify a CanExecuteCommand delegate the command still executes.</returns>
+        </member>
+        <member name="M:AttachedCommandBehavior.DelegateCommand`1.Execute(`0)">
+            <summary>
+            Executes the actual command
+            </summary>
+            <param name="parameter">THe command parameter to be passed</param>
+        </member>
+        <member name="F:AttachedCommandBehavior.EventArgsHandler`1.LastEventArgsProperty">
+            <summary>
+            LastEventArgs dependency property
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.EventArgsHandler`1.GetLastEventArgs(System.Windows.DependencyObject)">
+            <summary>
+            Gets the last EventArgs
+            </summary>
+            <param name="d">The <see cref="T:System.Windows.DependencyObject"/> from which one get the EventArgs</param>
+            <returns>The last EventArgs of the specified <see cref="T:System.Windows.DependencyObject"/></returns>
+        </member>
+        <member name="M:AttachedCommandBehavior.EventArgsHandler`1.OnEventHandlerChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the HandleEventHandler property.
+            </summary>
+        </member>
+        <member name="T:AttachedCommandBehavior.EventHandlerGenerator">
+            <summary>
+            Generates delegates according to the specified signature on runtime
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.EventHandlerGenerator.CreateDelegate(System.Type,System.Reflection.MethodInfo,System.Object)">
+            <summary>
+            Generates a delegate with a matching signature of the supplied eventHandlerType
+            This method only supports Events that have a delegate of type void
+            </summary>
+            <param name="eventHandlerType">The delegate type to wrap. Note that this must always be a void delegate</param>
+            <param name="methodToInvoke">The method to invoke</param>
+            <param name="methodInvoker">The object where the method resides</param>
+            <returns>Returns a delegate with the same signature as eventHandlerType that calls the methodToInvoke inside</returns>
+        </member>
+        <member name="T:AttachedCommandBehavior.IExecutionStrategy">
+            <summary>
+            Defines the interface for a strategy of execution for the CommandBehaviorBinding
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.IExecutionStrategy.Behavior">
+            <summary>
+            Gets or sets the Behavior that we execute this strategy
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.IExecutionStrategy.Execute(System.Object)">
+            <summary>
+            Executes according to the strategy type
+            </summary>
+            <param name="parameter">The parameter to be used in the execution</param>
+        </member>
+        <member name="T:AttachedCommandBehavior.CommandExecutionStrategy">
+            <summary>
+            Executes a command 
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.CommandExecutionStrategy.Behavior">
+            <summary>
+            Gets or sets the Behavior that we execute this strategy
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.CommandExecutionStrategy.Execute(System.Object)">
+            <summary>
+            Executes the Command that is stored in the CommandProperty of the CommandExecution
+            </summary>
+            <param name="parameter">The parameter for the command</param>
+        </member>
+        <member name="T:AttachedCommandBehavior.ActionExecutionStrategy">
+            <summary>
+            executes a delegate
+            </summary>
+        </member>
+        <member name="P:AttachedCommandBehavior.ActionExecutionStrategy.Behavior">
+            <summary>
+            Gets or sets the Behavior that we execute this strategy
+            </summary>
+        </member>
+        <member name="M:AttachedCommandBehavior.ActionExecutionStrategy.Execute(System.Object)">
+            <summary>
+            Executes an Action delegate
+            </summary>
+            <param name="parameter">The parameter to pass to the Action</param>
+        </member>
+    </members>
+</doc>

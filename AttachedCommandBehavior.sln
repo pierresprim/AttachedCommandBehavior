@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedCommandBehavior", "AttachedCommandBehavior\AttachedCommandBehavior.csproj", "{BA852758-6682-4878-906A-917A1E75DE16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttachedCommandBehavior", "AttachedCommandBehavior\AttachedCommandBehavior.csproj", "{E0BA6314-DB68-466F-8D7C-DE29A59B089B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedCommandBehaviorDemo", "AttachedCommandBehaviorDemo\AttachedCommandBehaviorDemo.csproj", "{6E07A460-651E-48AC-97EE-38637C16A1EE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{992F0AF3-ED44-4C95-9B87-099A5ADDED41}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Changelog.md = Changelog.md
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedCommandBehaviorDemo", "AttachedCommandBehaviorDemo\AttachedCommandBehaviorDemo.csproj", "{9D30AA03-90AF-4DF9-998E-1C1E2344BD34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +21,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BA852758-6682-4878-906A-917A1E75DE16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA852758-6682-4878-906A-917A1E75DE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA852758-6682-4878-906A-917A1E75DE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA852758-6682-4878-906A-917A1E75DE16}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E07A460-651E-48AC-97EE-38637C16A1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E07A460-651E-48AC-97EE-38637C16A1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E07A460-651E-48AC-97EE-38637C16A1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E07A460-651E-48AC-97EE-38637C16A1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0BA6314-DB68-466F-8D7C-DE29A59B089B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0BA6314-DB68-466F-8D7C-DE29A59B089B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0BA6314-DB68-466F-8D7C-DE29A59B089B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0BA6314-DB68-466F-8D7C-DE29A59B089B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D30AA03-90AF-4DF9-998E-1C1E2344BD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D30AA03-90AF-4DF9-998E-1C1E2344BD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D30AA03-90AF-4DF9-998E-1C1E2344BD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D30AA03-90AF-4DF9-998E-1C1E2344BD34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
