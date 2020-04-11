@@ -7,7 +7,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>AttachedCommandBehaviorDemo.snk</AssemblyOriginatorKeyFile>
     <PackageId>AttachedCommandBehaviorDemo</PackageId>
-    <Version>3.1.0.1</Version>
+    <Version>3.1.0.2</Version>
     <Description>Demo for the AttachedCommandBehavior package</Description>
     <Product>WinCopies.AttachedCommandBehavior</Product>
     <Copyright>Copyright © Pierre Sprimont 2020</Copyright>

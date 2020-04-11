@@ -18,7 +18,7 @@
     <PackageId>WinCopies.AttachedCommandBehavior</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>3.1.0.1</Version>
+    <Version>3.1.0.2</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>WinCopies.AttachedCommandBehavior.snk</AssemblyOriginatorKeyFile>
     <DocumentationFile>WinCopies.AttachedCommandBehavior.xml</DocumentationFile>
@@ -34,6 +34,10 @@
     <PackageTags>AttachedCommandBehavior, WPF, Commands</PackageTags>
     <PackageReleaseNotes>See https://github.com/pierresprim/AttachedCommandBehavior/blob/master/Changelog.md</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\LICENSE">
