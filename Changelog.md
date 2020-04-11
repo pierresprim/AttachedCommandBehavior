@@ -14,6 +14,6 @@ NuGet package: [https://www.nuget.org/packages/WinCopies.AttachedCommandBehavior
 Changes from original version
 -----------------------------
 
-- .NetCore is now supported. Fixes #1.
-- Can be used in styles and triggers (v3.1)
-- Can handle multiple event handlers (v3.0)
+- .NetCore is now supported. Fixes #1. (v3.1.0.1)
+- Can be used in styles and triggers. (v3.1)
+- Can handle multiple event handlers. (v3.0)
