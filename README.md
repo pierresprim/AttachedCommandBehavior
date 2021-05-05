@@ -4,6 +4,8 @@ Fork of the [https://marlongrech.wordpress.com/2008/12/13/attachedcommandbehavio
 README
 ======
 
+This project is now included in [https://github.com/pierresprim/WinCopies.Util](https://github.com/pierresprim/WinCopies.Util)
+
 Usage notes
 -----------
 
